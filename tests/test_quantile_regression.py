@@ -3,7 +3,7 @@ import numpy as np
 import time
 import cvxpy as cp
 import statsmodels.api as sm
-from onlineconformal.utils import fit_ar_quantile_loss, construct_ar_features
+from onlinecp.utils import fit_ar_quantile_loss, construct_ar_features
 
 
 ## Legacy quantile regression implementation

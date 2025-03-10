@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "onlineconformal"
+project = "onlinecp"
 copyright = "2025, Christopher Mohri"
 author = "Christopher Mohri"
 release = "0.1.0"
@@ -24,12 +24,12 @@ exclude_patterns = []
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "alabaster"
-html_static_path = ["_static"]
+#html_static_path = ["_static"]
 
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../../onlineconformal"))  # Ensure package is found
+sys.path.insert(0, os.path.abspath("../../onlinecp"))  # Ensure package is found
 
 # Enable Sphinx extensions
 extensions = [

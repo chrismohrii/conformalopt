@@ -1,7 +1,7 @@
-onlineconformal module
+onlinecp module
 ======================
 
-.. automodule:: onlineconformal
+.. automodule:: onlinecp
    :members: 
    :undoc-members:
    :show-inheritance:

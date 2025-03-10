@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>data - onlineconformal 0.1.0 documentation</title>
+        <title>data - onlinecp 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -165,7 +165,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">onlineconformal 0.1.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">onlinecp 0.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -189,7 +189,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">onlineconformal 0.1.0 documentation</span>
+  <span class="sidebar-brand-text">onlinecp 0.1.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -199,7 +199,7 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../onlineconformal.html">onlineconformal module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onlinecp.html">onlinecp module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data.html">data module</a></li>
 </ul>
 
@@ -241,6 +241,7 @@
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
+
 <span class="k">def</span> <span class="nf">construct_file_path</span><span class="p">(</span><span class="n">data_name</span><span class="p">):</span>
 
     <span class="c1"># Get the directory where this script is located</span>
@@ -255,9 +256,9 @@
 <span class="k">def</span> <span class="nf">get_scores</span><span class="p">(</span><span class="n">data_name</span><span class="p">,</span> <span class="n">scores</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Loads and processes scores for a specified dataset. The scores are calculated as</span>
-<span class="sd">    |Y_t - \hat Y_t| for various base forecasters \hat Y_t. The datasets are all described</span>
+<span class="sd">    |Y_t - hat Y_t| for various base forecasters hat Y_t. The datasets are all described</span>
 <span class="sd">    in detail in CITE. The datasets of the form name* should be input as f&quot;{name}_{base_forecaster}_absolute-residual_scores&quot;</span>
-<span class="sd">    for base_forecaster as `ar`, `prophet`, `theta`, or `transformer`. </span>
+<span class="sd">    for base_forecaster as `ar`, `prophet`, `theta`, or `transformer`.</span>
 
 
 <span class="sd">    Args:</span>

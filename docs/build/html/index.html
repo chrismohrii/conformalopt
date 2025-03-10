@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="onlineconformal module" href="onlineconformal.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="onlinecp module" href="onlinecp.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>onlineconformal 0.1.0 documentation</title>
+        <title>onlinecp 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
@@ -166,7 +166,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">onlineconformal 0.1.0 documentation</div></a>
+      <a href="#"><div class="brand">onlinecp 0.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -190,7 +190,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
   
   
-  <span class="sidebar-brand-text">onlineconformal 0.1.0 documentation</span>
+  <span class="sidebar-brand-text">onlinecp 0.1.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -200,7 +200,7 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="onlineconformal.html">onlineconformal module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="onlinecp.html">onlinecp module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">data module</a></li>
 </ul>
 
@@ -242,9 +242,9 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="onlineconformal">
-<h1>onlineconformal<a class="headerlink" href="#onlineconformal" title="Link to this heading">¶</a></h1>
-<p>This site provides documentation for the <code class="code docutils literal notranslate"><span class="pre">onlineconformal</span></code> pypi package.</p>
+          <section id="onlinecp">
+<h1>onlinecp<a class="headerlink" href="#onlinecp" title="Link to this heading">¶</a></h1>
+<p>This site provides documentation for the <code class="code docutils literal notranslate"><span class="pre">onlinecp</span></code> pypi package.</p>
 <p>The main part of the package is the <code class="code docutils literal notranslate"><span class="pre">ConformalPredictor</span></code> class,
 which provides predictions for online conformal prediction. It can implement all the algorithms introduced in
 CITE, and we provide a basic template below.</p>
@@ -284,7 +284,7 @@ several datasets used in CITE, which can be accessed via the <code class="code d
 <p>The first step is to fit the hyperparameters of a <code class="code docutils literal notranslate"><span class="pre">ConformalPredictor</span></code> object on some validation data.
 Then, it can be used to make predictions, and its <code class="code docutils literal notranslate"><span class="pre">quantile_tracker</span></code> should be updated once the true
 score is observed.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">onlineconformal</span> <span class="k">as</span> <span class="nn">oc</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">onlinecp</span> <span class="k">as</span> <span class="nn">oc</span>
 
 <span class="c1"># Get an example dataset.</span>
 <span class="n">scores</span> <span class="o">=</span> <span class="n">oc</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get_scores</span><span class="p">(</span><span class="s2">&quot;GOOGL_theta_absolute-residual_scores&quot;</span><span class="p">)</span>
@@ -320,8 +320,8 @@ appended as a bias term, override
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="onlineconformal.html">onlineconformal module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="onlineconformal.html#onlineconformal.ConformalPredictor"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="onlinecp.html">onlinecp module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="onlinecp.html#onlinecp.ConformalPredictor"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="data.html">data module</a><ul>
@@ -338,12 +338,12 @@ appended as a bias term, override
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="onlineconformal.html">
+          <a class="next-page" href="onlinecp.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">onlineconformal module</div>
+                <div class="title">onlinecp module</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -378,7 +378,7 @@ appended as a bias term, override
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">onlineconformal</a><ul>
+<li><a class="reference internal" href="#">onlinecp</a><ul>
 <li><a class="reference internal" href="#basic-components">Basic Components</a></li>
 <li><a class="reference internal" href="#template">Template</a></li>
 </ul>

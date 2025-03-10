@@ -1,13 +1,13 @@
-.. onlineconformal documentation master file, created by
+.. onlinecp documentation master file, created by
    sphinx-quickstart on Sun Feb 23 16:26:31 2025.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 
-onlineconformal
+onlinecp
 ===========================================
 
-This site provides documentation for the :code:`onlineconformal` pypi package. 
+This site provides documentation for the :code:`onlinecp` pypi package. 
 
 The main part of the package is the :code:`ConformalPredictor` class,
 which provides predictions for online conformal prediction. It can implement all the algorithms introduced in
@@ -59,7 +59,7 @@ score is observed.
 
 .. code-block:: python
 
-   import onlineconformal as oc
+   import onlinecp as oc
 
    # Get an example dataset.
    scores = oc.data.get_scores("GOOGL_theta_absolute-residual_scores")
@@ -98,5 +98,5 @@ appended as a bias term, override
    :maxdepth: 2
    :caption: Modules:
 
-   onlineconformal
+   onlinecp
    data

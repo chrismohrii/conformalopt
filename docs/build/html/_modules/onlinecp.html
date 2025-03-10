@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
-        <title>onlineconformal - onlineconformal 0.1.0 documentation</title>
+        <title>onlinecp - onlinecp 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -165,7 +165,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../index.html"><div class="brand">onlineconformal 0.1.0 documentation</div></a>
+      <a href="../index.html"><div class="brand">onlinecp 0.1.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -189,7 +189,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
-  <span class="sidebar-brand-text">onlineconformal 0.1.0 documentation</span>
+  <span class="sidebar-brand-text">onlinecp 0.1.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -199,7 +199,7 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../onlineconformal.html">onlineconformal module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../onlinecp.html">onlinecp module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data.html">data module</a></li>
 </ul>
 
@@ -235,7 +235,7 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <h1>Source code for onlineconformal</h1><div class="highlight"><pre>
+          <h1>Source code for onlinecp</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
 <span class="kn">from</span> <span class="nn">data</span> <span class="kn">import</span> <span class="n">get_scores</span>
@@ -259,7 +259,7 @@
 
 
 <div class="viewcode-block" id="ConformalPredictor">
-<a class="viewcode-back" href="../onlineconformal.html#onlineconformal.ConformalPredictor">[docs]</a>
+<a class="viewcode-back" href="../onlinecp.html#onlinecp.ConformalPredictor">[docs]</a>
 <span class="k">class</span> <span class="nc">ConformalPredictor</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    A class for implementing an online conformal predictor as in CITE.</span>
@@ -267,12 +267,12 @@
 <span class="sd">    Attributes:</span>
 <span class="sd">        alpha (float): Target miscoverage level. If set to 0.1, for example, eventually 90% coverage will be achieved.</span>
 <span class="sd">        lr_type (str): Type of learning rate, can be `fixed`, `decaying`, or `proportional`.</span>
-<span class="sd">            The `decaying` learning rate is of the form \\Theta(t**{-0.6}). The `proportional` option </span>
+<span class="sd">            The `decaying` learning rate is of the form \\Theta(t**{-0.6}). The `proportional` option</span>
 <span class="sd">            multiplies the learning rate by the range of scores over the last 20 scores.</span>
 <span class="sd">        quantile_track (str or None): Type of quantile tracker, can be `scalar` or `linear`.</span>
 <span class="sd">        scorecaster (str or None): Scorecasting method, either `theta_scorecaster` or `ar_quantile_loss_scorecaster`, or None.</span>
 <span class="sd">        hypers (dict): Specified hyperparameters for the conformal predictor. If none are passed in, all appropriate</span>
-<span class="sd">            hyperparameters will be tuned. </span>
+<span class="sd">            hyperparameters will be tuned.</span>
 <span class="sd">        conformal_predictor_name (str): Name of the conformal predictor to be used in out/ folder during evaluation.</span>
 <span class="sd">            If the empty string is passed in, a name will be constructed based on the conformal predictor&#39;s attributes.</span>
 <span class="sd">        expt_name (str): Experiment name for evaluation.</span>
@@ -338,7 +338,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">past_test_scores</span> <span class="o">=</span> <span class="p">[]</span>
 
 <div class="viewcode-block" id="ConformalPredictor.get_predictions">
-<a class="viewcode-back" href="../onlineconformal.html#onlineconformal.ConformalPredictor.get_predictions">[docs]</a>
+<a class="viewcode-back" href="../onlinecp.html#onlinecp.ConformalPredictor.get_predictions">[docs]</a>
     <span class="k">def</span> <span class="nf">get_predictions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieves the past predictions made by the conformal predictor.</span>
@@ -350,7 +350,7 @@
 
 
 <div class="viewcode-block" id="ConformalPredictor.set_hypers">
-<a class="viewcode-back" href="../onlineconformal.html#onlineconformal.ConformalPredictor.set_hypers">[docs]</a>
+<a class="viewcode-back" href="../onlinecp.html#onlinecp.ConformalPredictor.set_hypers">[docs]</a>
     <span class="k">def</span> <span class="nf">set_hypers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hyper_dict</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets the hyperparameters for the model.</span>
@@ -364,7 +364,7 @@
 
 
 <div class="viewcode-block" id="ConformalPredictor.reset_hypers">
-<a class="viewcode-back" href="../onlineconformal.html#onlineconformal.ConformalPredictor.reset_hypers">[docs]</a>
+<a class="viewcode-back" href="../onlinecp.html#onlinecp.ConformalPredictor.reset_hypers">[docs]</a>
     <span class="k">def</span> <span class="nf">reset_hypers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Resets the hyperparameters to their original values.</span>
@@ -373,7 +373,7 @@
 
 
 <div class="viewcode-block" id="ConformalPredictor.fit">
-<a class="viewcode-back" href="../onlineconformal.html#onlineconformal.ConformalPredictor.fit">[docs]</a>
+<a class="viewcode-back" href="../onlinecp.html#onlinecp.ConformalPredictor.fit">[docs]</a>
     <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val_scores</span><span class="p">,</span> <span class="n">tune_all_hparams</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">specific_hypers_to_tune</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">hyper_grid_overrides</span><span class="o">=</span><span class="p">{}):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Tunes the hyperparameters for the conformal predictor using a grid search on validation</span>
@@ -394,9 +394,7 @@
         <span class="n">hypers_to_tune</span> <span class="o">=</span> <span class="p">[</span><span class="n">hyper</span> <span class="k">for</span> <span class="n">hyper</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hypers</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hypers</span><span class="p">[</span><span class="n">hyper</span><span class="p">]</span> <span class="o">==</span> <span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="n">specific_hypers_to_tune</span>
         <span class="k">if</span> <span class="n">tune_all_hparams</span><span class="p">:</span>
             <span class="n">hypers_to_tune</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hypers</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-        <span class="n">grid</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="p">[(</span><span class="n">hyper_name</span><span class="p">,</span> <span class="n">hyper_value</span><span class="p">)</span> <span class="k">for</span> <span class="n">hyper_value</span> <span class="ow">in</span> <span class="n">hyper_grid</span><span class="p">[</span><span class="n">hyper_name</span><span class="p">]]</span> <span class="k">for</span> <span class="n">hyper_name</span> <span class="ow">in</span> <span class="n">hypers_to_tune</span>
-        <span class="p">]</span>
+        <span class="n">grid</span> <span class="o">=</span> <span class="p">[[(</span><span class="n">hyper_name</span><span class="p">,</span> <span class="n">hyper_value</span><span class="p">)</span> <span class="k">for</span> <span class="n">hyper_value</span> <span class="ow">in</span> <span class="n">hyper_grid</span><span class="p">[</span><span class="n">hyper_name</span><span class="p">]]</span> <span class="k">for</span> <span class="n">hyper_name</span> <span class="ow">in</span> <span class="n">hypers_to_tune</span><span class="p">]</span>
         <span class="n">hyper_choices</span> <span class="o">=</span> <span class="p">[{</span><span class="n">hyper</span><span class="p">:</span> <span class="n">value</span> <span class="k">for</span> <span class="n">hyper</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">combination</span><span class="p">}</span> <span class="k">for</span> <span class="n">combination</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="o">*</span><span class="n">grid</span><span class="p">)]</span>
 
         <span class="c1"># Perform grid search.</span>
@@ -434,7 +432,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">init_active_fields</span><span class="p">()</span>
 
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">hypers</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;lr&#39;</span><span class="p">,</span> <span class="s1">&#39;bias&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="n">hyper_grid</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">==</span> <span class="n">hyper_grid</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;lr&quot;</span><span class="p">,</span> <span class="s2">&quot;bias&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="n">hyper_grid</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">==</span> <span class="n">hyper_grid</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2"> is at the edge of hyperparameter grid.&quot;</span><span class="p">)</span></div>
 
 
@@ -456,7 +454,7 @@
         <span class="k">return</span> <span class="mi">0</span>
 
 <div class="viewcode-block" id="ConformalPredictor.predict">
-<a class="viewcode-back" href="../onlineconformal.html#onlineconformal.ConformalPredictor.predict">[docs]</a>
+<a class="viewcode-back" href="../onlinecp.html#onlinecp.ConformalPredictor.predict">[docs]</a>
     <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Makes a prediction by combining the quantile_tracker_predict and scorecaster_predict.</span>
@@ -478,10 +476,10 @@
 
 
 <div class="viewcode-block" id="ConformalPredictor.get_covariate">
-<a class="viewcode-back" href="../onlineconformal.html#onlineconformal.ConformalPredictor.get_covariate">[docs]</a>
+<a class="viewcode-back" href="../onlinecp.html#onlinecp.ConformalPredictor.get_covariate">[docs]</a>
     <span class="k">def</span> <span class="nf">get_covariate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_order</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns the covariate or feature vector based on past test scores.</span>
-<span class="sd">        This is the last p_order scores along with a bias term (1 appended), </span>
+<span class="sd">        This is the last p_order scores along with a bias term (1 appended),</span>
 <span class="sd">        and could be updated for richer feature vectors.</span>
 
 <span class="sd">        Args:</span>
@@ -503,7 +501,7 @@
 
     <span class="c1"># Updates quantile tracker.</span>
 <div class="viewcode-block" id="ConformalPredictor.step">
-<a class="viewcode-back" href="../onlineconformal.html#onlineconformal.ConformalPredictor.step">[docs]</a>
+<a class="viewcode-back" href="../onlinecp.html#onlinecp.ConformalPredictor.step">[docs]</a>
     <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="n">realized_score</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Updates the quantile tracker based on the realized score and prediction. The update</span>
@@ -538,7 +536,7 @@
 
 
 <div class="viewcode-block" id="ConformalPredictor.eval">
-<a class="viewcode-back" href="../onlineconformal.html#onlineconformal.ConformalPredictor.eval">[docs]</a>
+<a class="viewcode-back" href="../onlinecp.html#onlinecp.ConformalPredictor.eval">[docs]</a>
     <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">checkpoint_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Evaluates the model and outputs the results in out/expt_name/checkpoint_name.</span>
@@ -596,7 +594,6 @@
         <span class="n">cp</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">prediction</span><span class="p">,</span> <span class="n">test_scores</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>  <span class="c1"># Update the quantile tracker parameter.</span>
 
     <span class="n">cp</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>  <span class="c1"># Provides an evaluation in out/expt_name folder, alongside other ConformalPredictor objects if they exist.</span>
-
 </pre></div>
         </article>
       </div>
