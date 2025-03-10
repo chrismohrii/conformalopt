@@ -13,4 +13,4 @@ python:
 
 caching:
   paths:
-    - docs/build/   # or any directory where your build is located
+    - /docs/build/   # or any directory where your build is located
