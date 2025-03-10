@@ -98,5 +98,5 @@ appended as a bias term, override
    :maxdepth: 2
    :caption: Modules:
 
-   onlinecp
+   main
    data

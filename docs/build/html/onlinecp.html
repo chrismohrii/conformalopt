@@ -178,7 +178,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -236,217 +236,14 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="module-onlinecp">
-<span id="onlinecp-module"></span><h1>onlinecp module<a class="headerlink" href="#module-onlinecp" title="Link to this heading">¶</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">onlinecp.</span></span><span class="sig-name descname"><span class="pre">ConformalPredictor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'fixed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quantile_tracker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scorecaster</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hypers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conformal_predictor_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expt_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'expt'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/onlinecp.html#ConformalPredictor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#onlinecp.ConformalPredictor" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A class for implementing an online conformal predictor as in CITE.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.alpha">
-<span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#onlinecp.ConformalPredictor.alpha" title="Link to this definition">¶</a></dt>
-<dd><p>Target miscoverage level. If set to 0.1, for example, eventually 90% coverage will be achieved.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.lr_type">
-<span class="sig-name descname"><span class="pre">lr_type</span></span><a class="headerlink" href="#onlinecp.ConformalPredictor.lr_type" title="Link to this definition">¶</a></dt>
-<dd><p>Type of learning rate, can be <cite>fixed</cite>, <cite>decaying</cite>, or <cite>proportional</cite>.
-The <cite>decaying</cite> learning rate is of the form Theta(t**{-0.6}). The <cite>proportional</cite> option
-multiplies the learning rate by the range of scores over the last 20 scores.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.quantile_track">
-<span class="sig-name descname"><span class="pre">quantile_track</span></span><a class="headerlink" href="#onlinecp.ConformalPredictor.quantile_track" title="Link to this definition">¶</a></dt>
-<dd><p>Type of quantile tracker, can be <cite>scalar</cite> or <cite>linear</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str or None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.scorecaster">
-<span class="sig-name descname"><span class="pre">scorecaster</span></span><a class="headerlink" href="#onlinecp.ConformalPredictor.scorecaster" title="Link to this definition">¶</a></dt>
-<dd><p>Scorecasting method, either <cite>theta_scorecaster</cite> or <cite>ar_quantile_loss_scorecaster</cite>, or None.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str or None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.hypers">
-<span class="sig-name descname"><span class="pre">hypers</span></span><a class="headerlink" href="#onlinecp.ConformalPredictor.hypers" title="Link to this definition">¶</a></dt>
-<dd><p>Specified hyperparameters for the conformal predictor. If none are passed in, all appropriate
-hyperparameters will be tuned.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.conformal_predictor_name">
-<span class="sig-name descname"><span class="pre">conformal_predictor_name</span></span><a class="headerlink" href="#onlinecp.ConformalPredictor.conformal_predictor_name" title="Link to this definition">¶</a></dt>
-<dd><p>Name of the conformal predictor to be used in out/ folder during evaluation.
-If the empty string is passed in, a name will be constructed based on the conformal predictor’s attributes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.expt_name">
-<span class="sig-name descname"><span class="pre">expt_name</span></span><a class="headerlink" href="#onlinecp.ConformalPredictor.expt_name" title="Link to this definition">¶</a></dt>
-<dd><p>Experiment name for evaluation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.eval">
-<span class="sig-name descname"><span class="pre">eval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">checkpoint_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/onlinecp.html#ConformalPredictor.eval"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#onlinecp.ConformalPredictor.eval" title="Link to this definition">¶</a></dt>
-<dd><p>Evaluates the model and outputs the results in out/expt_name/checkpoint_name.
-If another ConformalPredictor has already produced evaluation results in
-this location, the results are combined. If <cite>checkpoint_name</cite> is not provided,
-then it is set to the current time step.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>checkpoint_name</strong> (<em>str</em>) – The checkpoint name for this evaluation.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val_scores</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tune_all_hparams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specific_hypers_to_tune</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hyper_grid_overrides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/onlinecp.html#ConformalPredictor.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#onlinecp.ConformalPredictor.fit" title="Link to this definition">¶</a></dt>
-<dd><p>Tunes the hyperparameters for the conformal predictor using a grid search on validation
-data. The hyperparameters leading to the best quantile loss, provided 1-alpha-0.01
-coverage was achieved, are selected. If no selection achieves this coverage constraint,
-the coverage constraint is disregarded.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>val_scores</strong> (<em>list</em>) – The validation scores to use for tuning hyperparameters.</p></li>
-<li><p><strong>tune_all_hparams</strong> (<em>bool</em>) – Whether to tune all hyperparameters or only those currently unspecified.</p></li>
-<li><p><strong>specific_hypers_to_tune</strong> (<em>list</em>) – Specific hyperparameters to tune, if provided.</p></li>
-<li><p><strong>hyper_grid_overrides</strong> (<em>dict</em>) – New grids to tune hyperparameters on, beyond default grid.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.get_covariate">
-<span class="sig-name descname"><span class="pre">get_covariate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p_order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/onlinecp.html#ConformalPredictor.get_covariate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#onlinecp.ConformalPredictor.get_covariate" title="Link to this definition">¶</a></dt>
-<dd><p>Returns the covariate or feature vector based on past test scores.
-This is the last p_order scores along with a bias term (1 appended),
-and could be updated for richer feature vectors.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>p_order</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of past test scores to include.
-If None, defaults to <cite>self.hypers[“p_order_qt”]</cite>.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A numpy array of shape <cite>(p_order + 1,)</cite> containing the past
-test scores (if available) and the bias term.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.get_predictions">
-<span class="sig-name descname"><span class="pre">get_predictions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/onlinecp.html#ConformalPredictor.get_predictions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#onlinecp.ConformalPredictor.get_predictions" title="Link to this definition">¶</a></dt>
-<dd><p>Retrieves the past predictions made by the conformal predictor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The list of past predictions.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>list</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.predict">
-<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/onlinecp.html#ConformalPredictor.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#onlinecp.ConformalPredictor.predict" title="Link to this definition">¶</a></dt>
-<dd><p>Makes a prediction by combining the quantile_tracker_predict and scorecaster_predict.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The final prediction.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.reset_hypers">
-<span class="sig-name descname"><span class="pre">reset_hypers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/onlinecp.html#ConformalPredictor.reset_hypers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#onlinecp.ConformalPredictor.reset_hypers" title="Link to this definition">¶</a></dt>
-<dd><p>Resets the hyperparameters to their original values.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.set_hypers">
-<span class="sig-name descname"><span class="pre">set_hypers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hyper_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/onlinecp.html#ConformalPredictor.set_hypers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#onlinecp.ConformalPredictor.set_hypers" title="Link to this definition">¶</a></dt>
-<dd><p>Sets the hyperparameters for the model.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>hyper_dict</strong> (<em>dict</em>) – A dictionary of hyperparameters to set.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="onlinecp.ConformalPredictor.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prediction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">realized_score</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/onlinecp.html#ConformalPredictor.step"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#onlinecp.ConformalPredictor.step" title="Link to this definition">¶</a></dt>
-<dd><p>Updates the quantile tracker based on the realized score and prediction. The update
-follows one step of gradient descent with the quantile loss on the quantile tracker’s
-parameter.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>prediction</strong> (<em>float</em>) – The predicted score.</p></li>
-<li><p><strong>realized_score</strong> (<em>float</em>) – The actual observed score.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+          <section id="onlinecp-module">
+<h1>onlinecp module<a class="headerlink" href="#onlinecp-module" title="Link to this heading">¶</a></h1>
 </section>
 
         </article>
@@ -492,44 +289,8 @@ parameter.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            On this page
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">onlinecp module</a><ul>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor</span></code></a><ul>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.alpha"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.alpha</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.lr_type"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.lr_type</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.quantile_track"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.quantile_track</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.scorecaster"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.scorecaster</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.hypers"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.hypers</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.conformal_predictor_name"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.conformal_predictor_name</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.expt_name"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.expt_name</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.eval"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.eval()</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.fit"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.fit()</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.get_covariate"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.get_covariate()</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.get_predictions"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.get_predictions()</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.predict"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.predict()</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.reset_hypers"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.reset_hypers()</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.set_hypers"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.set_hypers()</span></code></a></li>
-<li><a class="reference internal" href="#onlinecp.ConformalPredictor.step"><code class="docutils literal notranslate"><span class="pre">ConformalPredictor.step()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

@@ -1,0 +1,9 @@
+numpy
+matplotlib
+tqdm
+statsmodels
+cvxpy
+
+[dev]
+sphinx
+pytest

@@ -81,7 +81,7 @@ class TestConformalPredictor(unittest.TestCase):
         cp.past_test_scores = [1, 2, 3]
         self.assertEqual(cp.scorecaster_predict(), 0)
 
-    @patch("onlinecp.onlinecp.ThetaModel")
+    @patch("onlinecp.main.ThetaModel")
     def test_scorecaster_predict_theta(self, mock_theta_model):
         # Test theta_scorecaster branch.
         cp = ConformalPredictor(scorecaster="theta_scorecaster", hypers={"p_order_qt": 1, "bias": 1, "lr": 0.01})
@@ -97,7 +97,7 @@ class TestConformalPredictor(unittest.TestCase):
         np.testing.assert_array_equal(call_args[0], np.array(cp.past_test_scores[-200:]).astype(float))
         self.assertEqual(call_kwargs["period"], 1)
 
-    @patch("onlinecp.onlinecp.fit_ar_quantile_loss", return_value=np.array([2, 3]))
+    @patch("onlinecp.main.fit_ar_quantile_loss", return_value=np.array([2, 3]))
     def test_scorecaster_predict_ar(self, mock_fit_ar):
         # Test the AR quantile loss scorecaster branch.
         cp = ConformalPredictor(
@@ -177,7 +177,7 @@ class TestConformalPredictor(unittest.TestCase):
         cp.past_predictions = [1, 2, 3]
         cp.past_test_scores = [0.5, 1.5, 2.5]
         cp.conformal_predictor_name = ""
-        with patch("onlinecp.onlinecp.eval", side_effect=dummy_eval) as mock_eval:
+        with patch("onlinecp.main.eval", side_effect=dummy_eval) as mock_eval:
             cp.eval(checkpoint_name="")
             expected_checkpoint = str(len(cp.past_test_scores))
             expected_name = "SQT" if cp.quantile_track == "scalar" else f'LQT({cp.hypers.get("p_order_qt", "NA")})'

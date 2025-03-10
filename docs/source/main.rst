@@ -1,7 +1,7 @@
-onlinecp module
+main module
 ======================
 
-.. automodule:: onlinecp
+.. automodule:: main
    :members: 
    :undoc-members:
    :show-inheritance:
