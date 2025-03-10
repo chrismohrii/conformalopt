@@ -10,7 +10,3 @@ sphinx:
 python:
   install:
     - requirements: requirements.txt  # Ensure your requirements are listed here
-
-caching:
-  paths:
-    - /docs/build/   # or any directory where your build is located
