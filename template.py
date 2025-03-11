@@ -1,6 +1,6 @@
 if __name__ == "__main__":
 
-    import onlinecp as oc
+    import conformalopt as oc
 
     # Get an example dataset.
     scores = oc.data.get_scores("GOOGL_theta_absolute-residual_scores")

@@ -4,7 +4,7 @@ import os
 import json
 import tempfile
 
-from onlinecp import utils
+from conformalopt import utils
 
 
 class TestUtils(unittest.TestCase):

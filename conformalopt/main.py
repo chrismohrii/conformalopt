@@ -1,9 +1,9 @@
 import numpy as np
 from tqdm import tqdm
-from onlinecp.data import get_scores
+from conformalopt.data import get_scores
 import itertools
 import warnings
-from onlinecp.utils import *
+from conformalopt.utils import *
 from statsmodels.tsa.forecasting.theta import ThetaModel
 
 METHOD_HPARAMS = {

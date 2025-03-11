@@ -1,7 +1,7 @@
 main module
 ======================
 
-.. automodule:: onlinecp.main
+.. automodule:: conformalopt.main
    :members: 
    :undoc-members:
    :show-inheritance:
