@@ -4,3 +4,6 @@ tqdm
 statsmodels
 cvxpy
 furo
+sphinx
+sphinx_rtd_theme
+onlinecp
