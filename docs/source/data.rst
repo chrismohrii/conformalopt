@@ -1,7 +1,7 @@
 data module
 =================
 
-.. automodule:: data
+.. automodule:: onlinecp.data
    :members:
    :undoc-members:
    :show-inheritance:
