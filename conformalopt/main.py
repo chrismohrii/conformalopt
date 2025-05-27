@@ -22,7 +22,8 @@ DEFAULT_GRIDS = {
 
 class ConformalPredictor:
     """
-    A class for implementing an online conformal predictor as in CITE.
+    A class for implementing an online conformal predictor as in the paper Online Conformal Prediction via
+    Online Optimization.
 
     Attributes:
         alpha (float): Target miscoverage level. If set to 0.1, for example, eventually 90% coverage will be achieved.

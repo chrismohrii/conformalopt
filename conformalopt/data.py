@@ -17,7 +17,8 @@ def get_scores(data_name, scores=None):
     """
     Loads and processes scores for a specified dataset. The scores are calculated as
     |Y_t - hat Y_t| for various base forecasters hat Y_t. The datasets are all described
-    in detail in CITE. The datasets of the form name* should be input as f"{name}_{base_forecaster}_absolute-residual_scores"
+    in detail in the paper Online Conformal Prediction via
+    Online Optimization. The datasets of the form name* should be input as f"{name}_{base_forecaster}_absolute-residual_scores"
     for base_forecaster as `ar`, `prophet`, `theta`, or `transformer`.
 
 

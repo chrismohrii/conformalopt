@@ -10,11 +10,10 @@ conformalopt
 This site provides documentation for the :code:`conformalopt` pypi package. 
 
 The main part of the package is the :code:`ConformalPredictor` class,
-which provides predictions for online conformal prediction. It can implement all the algorithms introduced in the paper
-Online Conformal Prediction via Online Optimization by Felipe Areces, Christopher Mohri, Tatsunori Hashimoto, and John Duchi. 
-We provide a basic template below. 
+which provides predictions for online conformal prediction. It can implement all the algorithms introduced in
+Online Conformal Prediction via Online Optimization, and we provide a basic template below. 
 
-The code to reproduce the experiments in the paper can be found here: https://github.com/chrismohrii/conformalopt-experiments
+The code to reproduce the experiments in the paper an be found here: https://github.com/chrismohrii/conformalopt-experiments
 
 Basic Components
 ----------------

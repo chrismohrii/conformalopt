@@ -8,7 +8,7 @@ if __name__ == "__main__":
     val_scores, test_scores = scores[:split], scores[split:]
 
     # Instantiate a ConformalPredictor object for linear quantile tracking.
-    cp = oc.ConformalPredictor(quantile_tracker="linear", alpha=0.1)
+    cp = oc.ConformalPredictor(quantile_tracker="scalar", alpha=0.1)
 
     # Fit the ConformalPredictor's hyperparameters (such as learning rate).
     cp.fit(val_scores=val_scores)
